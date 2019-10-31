@@ -16,9 +16,11 @@ Paper: InceptionV1 + RMSProp
 This implementation: ResNet-50 + SGD
 
 ## Preparation
-Download [CUB_200_2011 Dataset](http://www.vision.caltech.edu/visipedia-data/CUB-200-2011/CUB_200_2011.tgz).
+Download the Dataset by running
+``` 
+./download_dataset.sh
 
-Unzip and locate it in this directory.
+```
 
 The whole directory should be look like this:
 ```
