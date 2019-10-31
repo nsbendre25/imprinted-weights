@@ -2,7 +2,9 @@
 This is an unofficial pytorch implementation of [Low-Shot Learning with Imprinted Weights](http://openaccess.thecvf.com/content_cvpr_2018/papers/Qi_Low-Shot_Learning_With_CVPR_2018_paper.pdf). 
 
 ## Requirements
-- Python 3.5+
+- CUDA == 10.0
+- cuDNN == 7.6.4
+- Python 3.6
 - PyTorch 0.4.1
 - torchvision
 - pandas (0.23.4)
@@ -50,14 +52,14 @@ imprinted-weights
 ### Pretrain models
 Train the model on the first 100 classes of CUB_200_2011.
 ```
-python pretrain.py
+python3 pretrain.py
 ```
 Trained models will be saved at `pretrain_checkpoint`.
 
 ### Imprint weights
 Use N novel exemplar from the training split to imprint weights.
 ```
-python imprint.py --model pretrain_checkpoint/model_best.pth.tar --num-sample N
+python3 imprint.py --model pretrain_checkpoint/model_best.pth.tar --num-sample N
 ```
 
 Trained models will be saved at `imprint_checkpoint`.
@@ -69,7 +71,7 @@ All w/o FT results of Table 1 and Table 2 in the paper can be reproduced by this
 ### Imprint weights + FT
 Apply fine-tuning to the imprinting model.
 ```
-python imprint_ft.py --model pretrain_checkpoint/model_best.pth.tar --num-sample N
+python3 imprint_ft.py --model pretrain_checkpoint/model_best.pth.tar --num-sample N
 ```
 Trained models will be saved at `imprint_ft_checkpoint`.
 
