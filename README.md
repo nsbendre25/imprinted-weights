@@ -80,7 +80,7 @@ All w/ FT results of Table 1 and Table 2 in the paper can be reproduced by this 
 ### All class joint
 Train model for base and novel classes jointly without a separate low-shot learning phase.
 ```
-python alljoint.py --num-sample N
+python3 alljoint.py --num-sample N
 ```
 Trained models will be saved at `alljoint_checkpoint`.
 
